@@ -1,9 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from '../components/header/Header'
-import Product from '../components/productpage/Product'
 import Productdetail from '../components/productdetail/Productdetail'
-import Category from '../components/category/Category'
+import Home from '../pages/home/Home'
+import Categoryproduct from '../components/categoryproduct/Categoryproduct'
+import Alluser from '../components/alluser/Alluser'
 
 function Routers() {
     return (
@@ -11,9 +12,10 @@ function Routers() {
             <Router>
                 <Header />
                 <Routes>
-                    <Route path='/' element={<Product />} />
-                    <Route path='/prodetails' element={<Productdetail />} />
-                    <Route path='/category' element={<Category />} />
+                    <Route path='/' element={<Home />} />
+                    <Route path='/prodetails/:id' element={<Productdetail />} />     
+                    <Route path='/categories/:id/product' element={<Categoryproduct />} /> 
+                    <Route path='/alluser' element={<Alluser />} />     
                 </Routes>
             </Router>
         </>

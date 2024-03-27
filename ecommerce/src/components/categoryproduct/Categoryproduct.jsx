@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import "./productstyle.css"
-import { getAllproduct } from '../../Apiservices/Api'
+import '../productpage/productstyle.css'
+import { getcategorybyproduct } from '../../Apiservices/Api'
+import { Link, useParams } from 'react-router-dom'
 
 
-function Product() {
-    const [product, setProduct] = useState([])
+function Categoryproduct() {
+    const [catproduct,setCatproduct]=useState([])
+    const{id}=useParams()
     useEffect(() => {
-      const fechdata = async () => {
-        const data = await getAllproduct();
-        setProduct(data)
-        console.log('allproducts', product);
-      }
-      fechdata()
-    }, [])
-    return (
-        <>
-            <div className='product-grid'>
-            {product.map((product, key) => (
+        const fechdatas = async () => {
+          const data = await getcategorybyproduct(id);
+          setCatproduct(data)
+          console.log('allcategory',catproduct );
+        }
+        fechdatas()
+      }, [])
+  return (
+    <>
+       <div className='product-grid'>
+            {catproduct.map((product, key) => (
                 <div className='product'key={product.id} >
                     <img src={product.images} alt='alternative' />
                     <h2 className='sample'>{product.title}</h2>
@@ -35,8 +36,8 @@ function Product() {
                 </div>
                 ))}
             </div>
-        </>
-    )
+    </>
+  )
 }
 
-export default Product
+export default Categoryproduct
