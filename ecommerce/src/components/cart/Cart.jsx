@@ -13,15 +13,17 @@ function Cart() {
         <hr/>
         <ul className="cart-items">
           {cart.map((item, index) => (
+            <>
             <li key={index}>
               <span><img src={item.images} alt={item.name} style={{ width: '100px', height: '100px' }} /></span>
               <span>{item.title}</span>
               <span>${item.price}</span>
               <button onClick={() => removeFromCart(item.id)}>Delete</button>
             </li>
-            
+            <hr/>
+           </> 
           ))}
-          <hr/>
+          
         </ul>
         <p className="total">Total: ${cart.reduce((acc, item) => acc + item.price, 0)}</p>
       </div>
