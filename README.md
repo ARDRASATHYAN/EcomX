@@ -1,6 +1,6 @@
 ## Instructions to Run the App
 1. Clone the repository to your local machine:
-  Replace <repository_URL> with the URL of your GitHub repository.
+  Replace (https://github.com/ARDRASATHYAN/Ecomx.git) with the URL of your GitHub repository.
 
 2. Navigate to the project directory:
   cd ecommerce

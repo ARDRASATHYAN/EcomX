@@ -15,6 +15,7 @@ function Routers() {
                 <Header />
                 <Routes>
                     <Route path='/' element={<Home />} />
+                    <Route path='/EcomX' element={<Home />} />
                     <Route path='/logout' element={<Logout/>} />
                     <Route path='/prodetails/:id' element={<Productdetail />} />     
                     <Route path='/categories/:id/product' element={<Categoryproduct />} /> 
